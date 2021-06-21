@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: booking
-          image: 740569282574.dkr.ecr.ca-central-1.amazonaws.com/booking:v4
+          image: 740569282574.dkr.ecr.ca-central-1.amazonaws.com/booking:v5
           ports:
             - containerPort: 8080
           readinessProbe:

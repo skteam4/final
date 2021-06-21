@@ -6,35 +6,40 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Optional;
 
+
+
+import java.util.Optional;
 
 @RestController
 public class ConcertController {
 
-@Autowired
-ConcertRepository concertRepository;
+    @Autowired
+    ConcertRepository concertRepository;
 
-@RequestMapping(value = "/checkAndBookStock",
-        method = RequestMethod.GET,
-        produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/checkAndBookStock", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 
-public boolean checkAndBookStock(HttpServletRequest request, HttpServletResponse response)
-        throws Exception {
-     
+    public boolean checkAndBookStock(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
         System.out.println("##### /concert/checkAndBookStock  called #####");
 
         boolean status = false;
-        
+
         Long ccId = Long.valueOf(request.getParameter("ccId"));
         int qty = Integer.parseInt(request.getParameter("qty"));
 
-        System.out.println("##### ccid #####" + ccId +"##### qty" + qty);
+        System.out.println("##### ccid #####" + ccId + "##### qty" + qty);
         Optional<Concert> concert = concertRepository.findById(ccId);
-        
-        if(concert.isPresent()){
 
-                Concert concertValue = concert.get();
+        if (concert.isPresent()) {
+
+            Concert concertValue = concert.get();
+
+                try {
+                        Thread.currentThread();
+                        Thread.sleep((long) (400 + Math.random() * 220));
+                } catch (InterruptedException e) { }
+
 
                 if (concertValue.getStock() >= qty) {
                         concertValue.setStock(concertValue.getStock() - qty);

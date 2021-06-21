@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: concert
-          image: 740569282574.dkr.ecr.ca-central-1.amazonaws.com/concert:v2
+          image: 740569282574.dkr.ecr.ca-central-1.amazonaws.com/concert:v3
           ports:
             - containerPort: 8080
           readinessProbe:
