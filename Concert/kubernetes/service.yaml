@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: Concert
+  name: concert
   labels:
-    app: Concert
+    app: concert
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: Concert
+    app: concert

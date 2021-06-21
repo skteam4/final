@@ -11,7 +11,8 @@ spring:
         - id: Concert
           uri: http://localhost:8081
           predicates:
-            - Path=/concerts/** 
+            - Path=/concerts/** , /checkAndBookStock/**
+
         - id: Booking
           uri: http://localhost:8082
           predicates:
@@ -51,12 +52,12 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: Concert
-          uri: http://Concert:8080
+        - id: concert
+          uri: http://concert:8080
           predicates:
-            - Path=/concerts/** 
-        - id: Booking
-          uri: http://Booking:8080
+            - Path=/concerts/** , /checkAndBookStock/**
+        - id: booking
+          uri: http://booking:8080
           predicates:
             - Path=/bookings/** 
         - id: Alarm

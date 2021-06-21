@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Booking
+  name: booking
   labels:
-    app: Booking
+    app: booking
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Booking
+      app: booking
   template:
     metadata:
       labels:
-        app: Booking
+        app: booking
     spec:
       containers:
-        - name: Booking
-          image: username/Booking:latest
+        - name: booking
+          image: 740569282574.dkr.ecr.ca-central-1.amazonaws.com/booking:v4
           ports:
             - containerPort: 8080
           readinessProbe:

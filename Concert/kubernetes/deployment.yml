@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Concert
+  name: concert
   labels:
-    app: Concert
+    app: concert
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Concert
+      app: concert
   template:
     metadata:
       labels:
-        app: Concert
+        app: concert
     spec:
       containers:
-        - name: Concert
-          image: username/Concert:latest
+        - name: concert
+          image: 740569282574.dkr.ecr.ca-central-1.amazonaws.com/concert:v2
           ports:
             - containerPort: 8080
           readinessProbe:
