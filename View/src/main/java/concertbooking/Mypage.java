@@ -1,7 +1,6 @@
 package concertbooking;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name="Mypage_table")

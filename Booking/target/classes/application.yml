@@ -42,10 +42,10 @@ feign:
   hystrix:
     enabled: true
 
-hystrix:
-  command:
-    default:
-      execution.isolation.thread.timeoutInMilliseconds: 610  
+#hystrix:
+#  command:
+#    default:
+#      execution.isolation.thread.timeoutInMilliseconds: 610  
 ---
 
 spring:
@@ -71,3 +71,6 @@ spring:
         event-out:
           destination: concertbooking
           contentType: application/json
+#api: 
+#  url: 
+#    concert: ${concert-url}    

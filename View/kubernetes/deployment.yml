@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: View
+  name: view
   labels:
-    app: View
+    app: view
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: View
+      app: view
   template:
     metadata:
       labels:
-        app: View
+        app: view
     spec:
       containers:
-        - name: View
-          image: username/View:latest
+        - name: view
+          image: 740569282574.dkr.ecr.ca-central-1.amazonaws.com/view:v1
           ports:
             - containerPort: 8080
           readinessProbe:
